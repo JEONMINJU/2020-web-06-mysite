@@ -1,17 +1,16 @@
+/************전역선언************/
+var bannerInterval;
+var bannerIdx = 0;
+
 /************이벤트선언************/
 $(".modal-trigger").click(onModalShow);
 $(".modal-container").click(onModalHide);
 $(".modal-wrapper").click(onModalWrapperClick);
 $(".modal-wrapper").find(".bt-close").click(onModalHide);
 
-function onGet(r) {
-	var html = '', i;
-   for(var i in r) {
+bannerInterval = setInterval(onBannerInterval, 4000);
+$(".main-wrapper .bt-prev").click(onPrev);
 
-	 }
-	   console.log(r);
-}
-$.get('../json/navi-home.json', onGet); //navi all
 
 /************이벤트콜백************/
 function onModalWrapperClick(e) {
@@ -33,5 +32,12 @@ function onModalHide(e) {
 		$(".modal-container").css({"display": "none"});
 		$("body").removeClass("hide");
 	}, 300);
+}
+
+function onBannerInterval() {
+		 bannerIdx = bannerIdx == 3 ? 0 : bannerIdx + 1 ;
+		 $(".main-wrapper .banner").fadeOut();
+		 $(".main-wrapper .banner").eq(bannerIdx).fadeIn();
+
 }
 

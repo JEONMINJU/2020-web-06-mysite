@@ -80,8 +80,9 @@ a:hover {
 
 /************ header-wrapper *************/
 .header-wrapper {
-  background-color: #f14d4c;
+  background-color : transparent;
   position: relative;
+  z-index: 99;
 }
 
 .header-wrapper .header-white-wrap {
@@ -186,8 +187,19 @@ a:hover {
 }
 
 /************ .main-wrapper *************/
-.main-wrapper {position: relative;}
-.main-wrapper .banner {position: absolute; width: 100%;}
+.main-wrapper {/* position: relative; */}
+.main-wrapper .banner {position: absolute; top: 0; left: 0; width: 100%; text-align: center;}
+.main-wrapper .banner .title-wrap{position: absolute; top: 13em; left: 50%; transform: translateX(-50%); color: #f9f9f9;}
+.main-wrapper .banner .title-wrap h2.title{font-size: 8.5em; font-weight: bold; line-height: 1em; }
+.main-wrapper .banner .title-wrap .content{font-size: 1.25em; font-style: italic; line-height: 1.875em; font-weight: lighter; margin-top: 2.5em;}
+.main-wrapper .banner .title-wrap .bt-more{border: 1px solid #f9f9f9; padding: 1.35em 3.15em;  margin-top: 3em; letter-spacing: 0.125em; transition: all 0.3s;}
+.main-wrapper .banner .title-wrap .bt-more:hover {background-color: transparent; color: #f9f9f9;}
+.main-wrapper .arrow-wrapper {}
+.main-wrapper .arrow-wrapper .bt-arrow {color: #f9f9f9; font-size: 3em; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer;}
+
+.main-wrapper .arrow-wrapper .bt-prev {left: 1em; z-index: 2;}
+.main-wrapper .arrow-wrapper .bt-next {right: 1em; z-index: 2;}
+
 
 /************ .modal-container *************/
 .modal-container {
