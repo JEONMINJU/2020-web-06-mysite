@@ -8,15 +8,25 @@ $(".modal-container").click(onModalHide);
 $(".modal-wrapper").click(onModalWrapperClick);
 $(".modal-wrapper").find(".bt-close").click(onModalHide);
 
-bannerInterval = setInterval(onBannerInterval, 4000);
-$(".main-wrapper .bt-prev").click(onPrev);
+$(".icon-wrapper .bt-search").click(onTypeShow);
+$(".header-wrapper").find(".bt-close").click(onTypeHide);
 
+
+bannerInterval = setInterval(onBannerInterval, 5000);
+
+$(".icon-wrapper .cart").hover(onSubCart); // sub cart !  dropdown
+$(".icon-wrapper .cart").mouseleave(onSubCartLeave); // sub cart !  up
 
 /************이벤트콜백************/
+function onModalHide(e) {
+	e.stopPropagation();
+}
+
 function onModalWrapperClick(e) {
 	e.stopPropagation(); //.modal-wrapper를 클릭해도 닫히지 않게 막아줌
 }
 
+// 오른쪽 바스 모달
 function onModalShow(e) {
 	e.preventDefault();
 	$(".modal-container").css({"display": "block"});
@@ -34,10 +44,24 @@ function onModalHide(e) {
 	}, 300);
 }
 
+// 메인 배너 페이드 인,아웃
 function onBannerInterval() {
 		 bannerIdx = bannerIdx == 3 ? 0 : bannerIdx + 1 ;
 		 $(".main-wrapper .banner").fadeOut();
 		 $(".main-wrapper .banner").eq(bannerIdx).fadeIn();
-
 }
 
+// 카트 드롭다운
+function onSubCart() {
+	 $(".header-wrapper .sub-cart").addClass('active');
+}
+function onSubCartLeave() {
+	$(".header-wrapper .sub-cart").removeClass('active');
+}
+
+function onTypeShow() {
+	 $(".header-wrapper .search-wrap").stop().fadeIn();
+}
+function onTypeHide() {
+	 $(".header-wrapper .search-wrap").stop().fadeOut();
+}
