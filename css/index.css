@@ -316,24 +316,36 @@ a:hover {
 
 .main-wrapper .arrow-wrapper {}
 
-.main-wrapper .arrow-wrapper .bt-arrow {
+.main-wrapper .bt-arrow {
   color: #f9f9f9;
   font-size: 3em;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  z-index: 99;
 }
 
-.main-wrapper .arrow-wrapper .bt-prev {
+.main-wrapper .bt-prev {
   left: 1em;
-  z-index: 2;
 }
 
-.main-wrapper .arrow-wrapper .bt-next {
+.main-wrapper .bt-next {
   right: 1em;
-  z-index: 2;
 }
+
+.main-wrapper .pager-wrap {
+  display: flex;
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  bottom: 1em;
+  transform: translateX(-50%);
+}
+.main-wrapper .pager {
+  font-size: 1.25em; padding: 0.5em; color: #fff; cursor: pointer;
+}
+.main-wrapper .pager.active {color: #e7d5a3}
 
 
 /************ .modal-container *************/
@@ -358,7 +370,7 @@ a:hover {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translateX(0);
+  transform: translateX(100%);
   transition: all 0.3s;
 }
 
@@ -421,7 +433,7 @@ a:hover {
   opacity: 1;
 }
 
-.modal-wrapper.active {
+.modal-container.active .modal-wrapper {
   transform: translateX(0);
 }
 
