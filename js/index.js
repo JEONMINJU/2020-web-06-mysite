@@ -28,27 +28,9 @@ $(".icon-wrapper .cart-wrap").mouseleave(onSubCartLeave); // sub cart !  up
 $(".navi-wrapper .navi.navi-home").mouseenter(onNaviShow);
 $(".navi-wrapper .navi.navi-home").mouseleave(onNaviHide);
 
-function onNaviShow() {
-	$(".navi-wrapper .navi.navi-home .sub-navi-wrapper").stop().slideDown();
-}
-function onNaviHide() {
-	$(".navi-wrapper .navi.navi-home .sub-navi-wrapper").stop().slideUp();
-}
-
-
 
 $(".sub-wrap ul.sub > .aw-txt").hover(onArrowShow);
 $(".sub-wrap ul.sub > .aw-txt").mouseleave(onArrowHide);
-
-function onArrowShow() {
-	$(".sub-wrap ul.sub > .aw-txt .aw").stop().addClass("active");
-}
-function onArrowHide() {
-	$(".sub-wrap ul.sub > .aw-txt .aw").stop().removeClass("active");
-}
-
-
-
 
 
 /************이벤트콜백************/
@@ -121,6 +103,21 @@ function onTypeHide() {
 	 $(".header-wrapper .search-wrap").stop().fadeOut();
 }
 
+function onNaviShow() {
+	$(".navi-wrapper .navi.navi-home .sub-navi-wrapper").stop().slideDown();
+}
+function onNaviHide() {
+	$(".navi-wrapper .navi.navi-home .sub-navi-wrapper").stop().slideUp();
+}
+
+
+function onArrowShow() {
+	$(".sub-wrap ul.sub > .aw-txt .aw").stop().addClass("active");
+}
+function onArrowHide() {
+	$(".sub-wrap ul.sub > .aw-txt .aw").stop().removeClass("active");
+}
+
 
 /************사용자함수************/
 function mainAni() {
@@ -129,3 +126,10 @@ function mainAni() {
 	$(".main-wrapper .banner").stop().fadeOut(300); 
 	$(".main-wrapper .banner").eq(bannerIdx).stop().fadeIn(300);
 } //이게 원래 메인슬라이드 bannerInterval에 있던 기능인데 공통으로 사용자 함수에 mainAni()로 만듬
+
+
+var swiper = new Swiper('.swiper-container', {
+	pagination: {
+		el: '.swiper-pagination',
+	},
+});
