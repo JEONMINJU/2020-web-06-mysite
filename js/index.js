@@ -2,8 +2,9 @@
 var bannerInterval;
 var bannerIdx = 0;
 
-
 /************이벤트선언************/
+bannerInterval = setInterval(onBannerInterval, 5000);
+
 $(".modal-trigger").click(onModalShow);
 $(".modal-container").click(onModalHide);
 $(".modal-wrapper").click(onModalWrapperClick);
@@ -11,9 +12,8 @@ $(".modal-wrapper").find(".bt-close").click(onModalHide);
 
 $(".icon-wrapper .bt-search").click(onTypeShow);
 $(".header-wrapper").find(".bt-close").click(onTypeHide);
+$(".mobile-wrapper .mobile-wrap .bars").click(onMobileNavi);
 
-
-bannerInterval = setInterval(onBannerInterval, 5000);
 
 $(".main-wrapper").mouseover(onMainOver); //오버했을때 잠깐 멈춰있게, 버튼 누를때 겹치지 않게,
 $(".main-wrapper").mouseleave(onMainLeave);
@@ -27,7 +27,6 @@ $(".icon-wrapper .cart-wrap").mouseleave(onSubCartLeave); // sub cart !  up
 
 $(".navi-wrapper .navi.navi-home").mouseenter(onNaviShow);
 $(".navi-wrapper .navi.navi-home").mouseleave(onNaviHide);
-
 
 $(".sub-wrap ul.sub > .aw-txt").hover(onArrowShow);
 $(".sub-wrap ul.sub > .aw-txt").mouseleave(onArrowHide);
@@ -110,7 +109,6 @@ function onNaviHide() {
 	$(".navi-wrapper .navi.navi-home .sub-navi-wrapper").stop().slideUp();
 }
 
-
 function onArrowShow() {
 	$(".sub-wrap ul.sub > .aw-txt .aw").stop().addClass("active");
 }
@@ -118,6 +116,9 @@ function onArrowHide() {
 	$(".sub-wrap ul.sub > .aw-txt .aw").stop().removeClass("active");
 }
 
+function onMobileNavi() {
+	$(".mobile-wrapper  .mo-sub-navi ").stop().slideToggle(300);
+}
 
 /************사용자함수************/
 function mainAni() {
@@ -129,6 +130,7 @@ function mainAni() {
 
 
 var swiper = new Swiper('.swiper-container', {
+	loop: true,
 	pagination: {
 		el: '.swiper-pagination',
 	},
