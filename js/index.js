@@ -14,7 +14,7 @@ $(".modal-wrapper").find(".bt-close").click(onModalHide);
 $(".icon-wrapper .bt-search").click(onTypeShow);
 $(".header-wrapper").find(".bt-close").click(onTypeHide);
 $(".mobile-wrapper .mobile-wrap .bars").click(onMobileNavi);
-$(".mo-navi .bt-show ").click(onMoNaviShow);
+$(".mo-navi .navi-title ").click(onMoNaviShow);
 
 
 $(".main-wrapper").mouseover(onMainOver); //오버했을때 잠깐 멈춰있게, 버튼 누를때 겹치지 않게,
@@ -123,7 +123,7 @@ function onMobileNavi() {
 }
 
 function onMoNaviShow() {
-	$(this).parent().next().stop().slideToggle(300);
+	$(this).parent().find('ul').stop().slideToggle(300);
 }
 
 

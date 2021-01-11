@@ -228,27 +228,25 @@ h2.common-title{font-size: 3.5em; font-weight: bold; padding-bottom: 0.5em;}
 .navi-wrapper .sub-navi-wrapper .sub-wrap {
   padding: 3em 2em;
   text-align: left;
+  min-width: 300px;
 }
 
-.navi-wrapper .sub-navi-wrapper .sub-wrap ul.sub {
-  /* border: 1px solid blue; */
-  width: 170px;
-}
 
-.navi-wrapper .sub-navi-wrapper .sub-wrap ul.sub>.aw-txt {
+.navi-wrapper .sub-navi-wrapper .sub-wrap .sub {
   font-weight: lighter;
   letter-spacing: -0.03em;
-  padding-bottom: 0.5em;
-  /* border: 1px solid green;  */
-  width: 200px;
+  padding-bottom: 0.5em; 
   overflow: hidden;
-  transform: translateX(-10%);
-  transition: all .3s;
 }
 
-.navi-wrapper .sub-navi-wrapper .sub-wrap ul.sub>.aw-txt:hover {
-  transform: translateX(0);
+.navi-wrapper .sub-navi-wrapper .sub-wrap .sub > div {
+  transform: translateX(-16px);
   color: #f14d4c;
+  transition: all 0.5s;
+}
+
+.navi-wrapper .sub-navi-wrapper .sub-wrap .sub:hover > div {
+  transform: translateX(0);
 }
 
 .navi-wrapper .sub-navi-wrapper .sub-wrap ul.sub>.aw-txt .aw {
@@ -267,10 +265,11 @@ h2.common-title{font-size: 3.5em; font-weight: bold; padding-bottom: 0.5em;}
 .mobile-wrapper .mobile-wrap .mobile-logo {margin: 0 auto;}
 .mobile-wrapper .mobile-wrap .mobile-logo img{width: 80px;}
 
-.mobile-wrapper  .mo-navi-wrap {background-color: #f9f9f9; height: 300px; display: none; padding: 0 5em;}
+.mobile-wrapper  .mo-navi-wrap {background-color: #f9f9f9; display: none; padding: 0 5em;}
 .mo-navi .navi-title { margin:  1em 0; font-size: 1.25em; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 0.875em;}
 .mo-navi .navi-title .bt-show { cursor: pointer;}
-.mo-navi .navi {padding: 0.75em 0; font-size: 0.875em; border-bottom: 1px solid #ccc; padding: 1.25em 0; color: #777; display: none;}
+.mo-navi > ul {display: none;}
+.mo-navi .navi {padding: 0.75em 0; font-size: 0.875em; border-bottom: 1px solid #ccc; padding: 1.25em 0; color: #777;}
 .mo-navi .navi:first-child {padding-top: 0;}
 
 
