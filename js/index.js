@@ -1,6 +1,7 @@
 /************전역선언************/
 var bannerInterval;
 var bannerIdx = 0;
+var monaviIdx = 0;
 
 /************이벤트선언************/
 bannerInterval = setInterval(onBannerInterval, 5000);
@@ -13,6 +14,7 @@ $(".modal-wrapper").find(".bt-close").click(onModalHide);
 $(".icon-wrapper .bt-search").click(onTypeShow);
 $(".header-wrapper").find(".bt-close").click(onTypeHide);
 $(".mobile-wrapper .mobile-wrap .bars").click(onMobileNavi);
+$(".mo-navi .bt-show ").click(onMoNaviShow);
 
 
 $(".main-wrapper").mouseover(onMainOver); //오버했을때 잠깐 멈춰있게, 버튼 누를때 겹치지 않게,
@@ -49,7 +51,7 @@ function onMainPager() {
 }
 
 function onMainOver() {
-	clearInterval(bannerInterval); //셋인터벌 기능 지우기
+	clearInterval(bannerInterval); //setInterval 기능 지우기
 }
 
 function onMainLeave() {
@@ -117,21 +119,35 @@ function onArrowHide() {
 }
 
 function onMobileNavi() {
-	$(".mobile-wrapper  .mo-sub-navi ").stop().slideToggle(300);
+	$(".mobile-wrapper  .mo-navi-wrap ").stop().slideToggle(300);
 }
+
+function onMoNaviShow() {
+	$(this).parent().next().stop().slideToggle(300);
+}
+
 
 /************사용자함수************/
 function mainAni() {
-	$(".main-wrapper .pager").removeClass("active"); //나머지 애들은 리무브 해달라.
-	$(".main-wrapper .pager").eq(bannerIdx).addClass("active"); //나의 선택된 인덱스번호에 액티브를 주고
+	$(".main-wrapper .pager").removeClass("active"); 
+	$(".main-wrapper .pager").eq(bannerIdx).addClass("active"); 
 	$(".main-wrapper .banner").stop().fadeOut(300); 
 	$(".main-wrapper .banner").eq(bannerIdx).stop().fadeIn(300);
-} //이게 원래 메인슬라이드 bannerInterval에 있던 기능인데 공통으로 사용자 함수에 mainAni()로 만듬
+} 
 
-
+// .midslide-wrapper
 var swiper = new Swiper('.swiper-container', {
 	loop: true,
 	pagination: {
 		el: '.swiper-pagination',
+	},
+});
+
+// .gal-wrapper
+var swiper = new Swiper('gal-wrapper .swiper-container', {
+	direction: 'vertical',
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true
 	},
 });
