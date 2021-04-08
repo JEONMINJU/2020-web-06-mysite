@@ -474,9 +474,6 @@ h2.common-title{font-size: 3.5em; font-weight: bold; padding-bottom: 0.5em;}
 .best-wrapper {width: 100%; margin: 0 auto; overflow: hidden; }
 .best-wrapper .best-wrap {display: flex; flex-wrap: wrap; justify-content: center; align-items: center; } 
 .best-wrapper .best-wrap .img-box1{ flex: 50% 0 0; display: flex; justify-content: center; align-items: center;}
-.best-wrapper .best-wrap .img-box1:hover .front {
- /*  transform: perspective(700px) translate3d(-4.88743px, 0.733083px, -0.733083px) rotate3d(1, 0, 0, -3deg) rotate3d(0, 1, 0, 4.88743deg) rotate3d(0, 0, 1, 0deg); */
-  }
 
 .best-wrapper .best-wrap .img-box2-wrap { flex: 50% 0 0; display: flex; flex-wrap: wrap; justify-content: center; }
 .best-wrapper .best-wrap .img-box2-wrap .img-box2{ display: flex; flex-wrap: wrap; flex: 50% 0 0; } 
